@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nkechi Udonsi — Data Analyst & AI Evaluator</title>
+  <meta name="description" content="Portfolio of Nkechi Udonsi — Data Analyst, AI Language Evaluator, and Technical Writer with 7+ years of experience." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --card: #1f2235;
+      --border: #2a2e42;
+      --text: #e8eaf6;
+      --muted: #8b90b0;
+      --teal: #2dd4bf;
+      --blue: #60a5fa;
+      --amber: #fbbf24;
+      --purple: #a78bfa;
+      --green: #34d399;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: var(--teal); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #0f1117 0%, #1a1d27 50%, #0d1b2a 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .avatar {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--teal), var(--blue));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem; font-weight: 700;
+      margin: 0 auto 1.5rem;
+      color: #0f1117;
+    }
+    .hero h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .hero .tagline {
+      font-size: 1rem; color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-bottom: 1.5rem; }
+    .tag {
+      padding: 0.3rem 0.8rem; border-radius: 999px;
+      font-size: 0.8rem; font-weight: 500;
+      border: 1px solid;
+    }
+    .tag-teal  { color: var(--teal);   border-color: var(--teal);   background: rgba(45,212,191,0.08); }
+    .tag-blue  { color: var(--blue);   border-color: var(--blue);   background: rgba(96,165,250,0.08); }
+    .tag-amber { color: var(--amber);  border-color: var(--amber);  background: rgba(251,191,36,0.08); }
+    .links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .links a {
+      padding: 0.5rem 1.2rem; border-radius: 8px;
+      font-size: 0.9rem; font-weight: 500;
+      background: var(--card); border: 1px solid var(--border);
+      color: var(--text); transition: border-color 0.2s;
+    }
+    .links a:hover { border-color: var(--teal); text-decoration: none; }
+
+    /* Stats bar */
+    .stats-bar {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 0; border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .stat {
+      flex: 1; min-width: 140px;
+      padding: 1.2rem 1rem; text-align: center;
+      border-right: 1px solid var(--border);
+    }
+    .stat:last-child { border-right: none; }
+    .stat-num { font-size: 1.6rem; font-weight: 700; color: var(--teal); }
+    .stat-label { font-size: 0.75rem; color: var(--muted); margin-top: 0.2rem; }
+
+    /* Main */
+    main { max-width: 960px; margin: 0 auto; padding: 3rem 1.5rem; }
+    section { margin-bottom: 3.5rem; }
+    h2 { font-size: 1.3rem; font-weight: 600; margin-bottom: 1.5rem;
+         display: flex; align-items: center; gap: 0.5rem; }
+    h2 span.line {
+      flex: 1; height: 1px; background: var(--border);
+    }
+
+    /* Project grid */
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
+    .card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 1.5rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .card:hover { border-color: var(--teal); transform: translateY(-2px); }
+    .card-icon { font-size: 1.5rem; margin-bottom: 0.8rem; }
+    .card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .card p { font-size: 0.875rem; color: var(--muted); margin-bottom: 1rem; line-height: 1.5; }
+    .chip-row { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .chip {
+      padding: 0.2rem 0.6rem; border-radius: 4px;
+      font-size: 0.7rem; font-weight: 500;
+      background: rgba(45,212,191,0.1); color: var(--teal);
+    }
+    .chip-blue { background: rgba(96,165,250,0.1); color: var(--blue); }
+    .chip-amber { background: rgba(251,191,36,0.1); color: var(--amber); }
+
+    /* Skills */
+    .skill-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+    .skill-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.2rem;
+    }
+    .skill-card h4 { font-size: 0.85rem; font-weight: 600; color: var(--muted); margin-bottom: 0.6rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .skill-list { font-size: 0.875rem; color: var(--text); }
+    .skill-list span { display: inline-block; margin-right: 0.3rem; }
+
+    /* Timeline */
+    .timeline { border-left: 2px solid var(--border); padding-left: 1.5rem; }
+    .tl-item { position: relative; margin-bottom: 1.5rem; }
+    .tl-item::before {
+      content: '';
+      position: absolute; left: -1.85rem; top: 0.4rem;
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--teal); border: 2px solid var(--bg);
+    }
+    .tl-item h4 { font-size: 0.95rem; font-weight: 600; }
+    .tl-item .org { font-size: 0.85rem; color: var(--teal); }
+    .tl-item .period { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.4rem; }
+    .tl-item p { font-size: 0.875rem; color: var(--muted); }
+
+    /* Footer */
+    footer {
+      text-align: center; padding: 2rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem; color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="avatar">NU</div>
+    <h1>Nkechi Udonsi</h1>
+    <p class="tagline">Warri, Delta State, Nigeria</p>
+    <div class="tags">
+      <span class="tag tag-teal">Data Analyst</span>
+      <span class="tag tag-blue">AI Language Evaluator</span>
+      <span class="tag tag-amber">Technical Writer</span>
+    </div>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/nkechi-udonsi-442b08231" target="_blank">LinkedIn</a>
+      <a href="https://github.com/nkechi-udonsi" target="_blank">GitHub</a>
+      <a href="mailto:nkechiudonsi77@gmail.com">Email Me</a>
+    </div>
+  </header>
+
+  <div class="stats-bar">
+    <div class="stat">
+      <div class="stat-num">7+</div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">3,142</div>
+      <div class="stat-label">AI Evaluations</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">59K+</div>
+      <div class="stat-label">Metadata Items</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">95%</div>
+      <div class="stat-label">Client Satisfaction</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">15%</div>
+      <div class="stat-label">Sales Growth Driven</div>
+    </div>
+  </div>
+
+  <main>
+
+    <section>
+      <h2>Data Analytics Projects <span class="line"></span></h2>
+      <div class="grid">
+
+        <div class="card">
+          <div class="card-icon">📊</div>
+          <h3>Sales & Customer Analytics</h3>
+          <p>SQL + Python analysis that identified key market trends, driving 15% sales growth and 20% customer retention boost at Whispers of Beauty Inc.</p>
+          <div class="chip-row">
+            <span class="chip">SQL</span>
+            <span class="chip">Python</span>
+            <span class="chip">Tableau</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">💉</div>
+          <h3>M&E Immunization Dashboard</h3>
+          <p>Monitoring & evaluation data operations for USAID vaccination campaigns. 100%+ improvement in processing rates. Best-performing team, Oru West (Jan 2023).</p>
+          <div class="chip-row">
+            <span class="chip">Power BI</span>
+            <span class="chip">Excel</span>
+            <span class="chip">EMID</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🧹</div>
+          <h3>Data Quality Pipeline</h3>
+          <p>Reusable data cleaning and validation framework achieving 95% data accuracy. Cuts manual preparation time from hours to minutes.</p>
+          <div class="chip-row">
+            <span class="chip">Python</span>
+            <span class="chip">Pandas</span>
+            <span class="chip">R</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>AI & Language Operations <span class="line"></span></h2>
+      <div class="grid">
+
+        <div class="card">
+          <div class="card-icon">🤖</div>
+          <h3>Language Acceptability Study</h3>
+          <p>3,142 AI acceptability evaluations across 58.79+ judging hours. Assessed AI response quality for machine learning pipeline improvements.</p>
+          <div class="chip-row">
+            <span class="chip chip-blue">QA Scoring</span>
+            <span class="chip chip-blue">NLP</span>
+            <span class="chip chip-blue">Python</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🛠️</div>
+          <h3>AI Evaluation Toolkit</h3>
+          <p>Practical framework for scoring and reviewing AI-generated text at scale. Weighted rubric across fluency, relevance, accuracy, completeness, and safety.</p>
+          <div class="chip-row">
+            <span class="chip chip-blue">Python</span>
+            <span class="chip chip-blue">JSON</span>
+            <span class="chip chip-blue">Pandas</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🏷️</div>
+          <h3>Metadata Analysis Pipeline</h3>
+          <p>Quality review of 59,103+ metadata items for AI training data pipelines. Schema validation, consistency checks, and audit trail documentation.</p>
+          <div class="chip-row">
+            <span class="chip chip-blue">Python</span>
+            <span class="chip chip-blue">Metadata QA</span>
+            <span class="chip chip-blue">Excel</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>Technical Writing <span class="line"></span></h2>
+      <div class="grid">
+
+        <div class="card">
+          <div class="card-icon">✍️</div>
+          <h3>Technical Docs Portfolio</h3>
+          <p>User guides, SOPs, and API documentation delivered to global clients via Upwork. 95% client satisfaction rate across all engagements.</p>
+          <div class="chip-row">
+            <span class="chip chip-amber">User Guides</span>
+            <span class="chip chip-amber">SOPs</span>
+            <span class="chip chip-amber">API Docs</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">📋</div>
+          <h3>Data Documentation Templates</h3>
+          <p>Reusable templates for data dictionaries, annotation guidelines, M&E reports, and dataset READMEs — making data projects reproducible and auditable.</p>
+          <div class="chip-row">
+            <span class="chip chip-amber">Data Dicts</span>
+            <span class="chip chip-amber">M&E Reports</span>
+            <span class="chip chip-amber">Markdown</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>Skills <span class="line"></span></h2>
+      <div class="skill-grid">
+        <div class="skill-card">
+          <h4>Data Analysis</h4>
+          <div class="skill-list">
+            <span>SQL</span> · <span>Python</span> · <span>R</span> ·
+            <span>Excel (Adv.)</span> · <span>Tableau</span> · <span>Power BI</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h4>AI & Language Ops</h4>
+          <div class="skill-list">
+            <span>AI Output Evaluation</span> · <span>QA Scoring</span> ·
+            <span>Metadata Analysis</span> · <span>Prompt/Response Testing</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h4>Data Engineering</h4>
+          <div class="skill-list">
+            <span>Database Management</span> · <span>Data Cleaning</span> ·
+            <span>Pipeline Optimisation</span> · <span>M&E Software</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h4>Technical Writing</h4>
+          <div class="skill-list">
+            <span>User Guides</span> · <span>SOPs</span> · <span>API Docs</span> ·
+            <span>M&E Reports</span> · <span>Data Dictionaries</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h4>Languages</h4>
+          <div class="skill-list">
+            <span>English (Proficient)</span> · <span>Igbo (Proficient)</span> ·
+            <span>French (Basic)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Experience <span class="line"></span></h2>
+      <div class="timeline">
+        <div class="tl-item">
+          <h4>Technical Writer (Freelance)</h4>
+          <div class="org">Upwork</div>
+          <div class="period">Feb 2022 – Present</div>
+          <p>Technical documentation, user guides, and SOPs for global clients. 95% client satisfaction rate.</p>
+        </div>
+        <div class="tl-item">
+          <h4>Monitoring & Evaluation Logistics Assistant</h4>
+          <div class="org">USAID (M-RITE)</div>
+          <div class="period">Nov 2022 – Jun 2023</div>
+          <p>RDQA, daily EMID synchronisation, and reporting for vaccination campaigns across Imo State. Best-performing team, Oru West (Jan 2023).</p>
+        </div>
+        <div class="tl-item">
+          <h4>Junior Data Analyst</h4>
+          <div class="org">Whispers of Beauty Inc.</div>
+          <div class="period">Sept 2012 – Jan 2019</div>
+          <p>Sales trend analysis, data hygiene, and BI dashboards. Drove 15% sales growth and 20% retention improvement.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Nkechi Udonsi · <a href="mailto:nkechiudonsi77@gmail.com">nkechiudonsi77@gmail.com</a> · Warri, Nigeria</p>
+    <p style="margin-top:0.5rem">"Data tells a story. I make sure it's the right one."</p>
+  </footer>
+
+</body>
+</html>
